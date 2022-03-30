@@ -1,4 +1,6 @@
-import {contextBridge} from 'electron';
+import { contextBridge } from "electron";
+
+import type { Exposed } from "./types";
 
 /**
  * Typesafe wrapper for `electron.contextBridge.exposeInMainWorld`.

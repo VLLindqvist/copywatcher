@@ -7,8 +7,11 @@
   "settings": {
     "import/resolver": {
       "alias": {
-        "map": [["assets", "./packages/renderer/assets"]],
-        "extensions": [".woff2"]
+        "map": [
+          ["assets", "./packages/renderer/assets"],
+          ["@src", "./packages/renderer/src"]
+        ],
+        "extensions": [".woff2", ".ts"]
       }
     },
     "react": {

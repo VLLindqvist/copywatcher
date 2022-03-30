@@ -10,7 +10,7 @@
     "types": ["node"],
     "baseUrl": ".",
     "paths": {
-      "/@/*": ["./src/*"]
+      "@src/*": ["./src/*"]
     },
     "lib": ["ESNext", "dom", "dom.iterable"],
     "jsx": "react-jsx",
