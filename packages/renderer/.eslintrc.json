@@ -3,10 +3,18 @@
     "browser": true,
     "node": false
   },
-  "extends": [
-    /** @see https://eslint.vuejs.org/rules/ */
-    "plugin:vue/vue3-recommended"
-  ],
+  "extends": ["plugin:react/recommended", "plugin:react/jsx-runtime"],
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [["assets", "./packages/renderer/assets"]],
+        "extensions": [".woff2"]
+      }
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
     "ecmaVersion": 12,

@@ -1,9 +1,11 @@
 /* eslint-env node */
 
-import {chrome} from '../../.electron-vendors.cache.json';
-import {join} from 'path';
-import {builtinModules} from 'module';
-import vue from '@vitejs/plugin-vue';
+import { join } from "path";
+import { builtinModules } from "module";
+import react from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
+import eslintPlugin from "vite-plugin-eslint";
+import { chrome } from "../../.electron-vendors.cache.json";
 
 const PACKAGE_ROOT = __dirname;
 
@@ -16,11 +18,12 @@ const config = {
   root: PACKAGE_ROOT,
   resolve: {
     alias: {
-      '/@/': join(PACKAGE_ROOT, 'src') + '/',
+      "/@/": `${join(PACKAGE_ROOT, "src")}/`,
+      _: join(PACKAGE_ROOT, "src"),
     },
   },
-  plugins: [vue()],
-  base: '',
+  plugins: [react(), tsconfigPaths(), eslintPlugin()],
+  base: "",
   server: {
     fs: {
       strict: true,
@@ -29,19 +32,17 @@ const config = {
   build: {
     sourcemap: true,
     target: `chrome${chrome}`,
-    outDir: 'dist',
-    assetsDir: '.',
+    outDir: "dist",
+    assetsDir: ".",
     rollupOptions: {
-      input: join(PACKAGE_ROOT, 'index.html'),
-      external: [
-        ...builtinModules.flatMap(p => [p, `node:${p}`]),
-      ],
+      input: join(PACKAGE_ROOT, "index.html"),
+      external: [...builtinModules.flatMap((p) => [p, `node:${p}`])],
     },
     emptyOutDir: true,
     brotliSize: false,
   },
   test: {
-    environment: 'happy-dom',
+    environment: "happy-dom",
   },
 };
 
