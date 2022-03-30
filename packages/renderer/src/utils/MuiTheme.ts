@@ -1,21 +1,21 @@
-import { createTheme } from "@mui/material";
+import { createTheme } from '@mui/material';
 
-import RobotoWoff2 from "assets/roboto-regular.woff2";
+import RobotoWoff2 from 'assets/roboto-regular.woff2';
 
 const theme = createTheme({
   typography: {
     fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
+      '-apple-system',
+      'BlinkMacSystemFont',
       '"Segoe UI"',
-      "Roboto",
+      'Roboto',
       '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
+      'Arial',
+      'sans-serif',
       '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
-    ].join(","),
+    ].join(','),
   },
   components: {
     MuiCssBaseline: {

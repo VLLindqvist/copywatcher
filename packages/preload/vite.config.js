@@ -1,4 +1,6 @@
 import { builtinModules } from "module";
+import tsconfigPaths from "vite-tsconfig-paths";
+import eslintPlugin from "vite-plugin-eslint";
 
 import { chrome } from "../../.electron-vendors.cache.json";
 
@@ -12,6 +14,7 @@ const config = {
   mode: process.env.MODE,
   root: PACKAGE_ROOT,
   envDir: process.cwd(),
+  plugins: [tsconfigPaths(), eslintPlugin()],
   build: {
     sourcemap: "inline",
     target: `chrome${chrome}`,

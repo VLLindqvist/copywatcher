@@ -1,3 +1,11 @@
+import { expect, test } from "vitest";
+
+test("preload", () => {
+  test("1", () => {
+    expect(1).toBeTruthy();
+  });
+});
+
 // import { type MaybeMocked, beforeEach, expect, test, vi } from "vitest";
 // import { BrowserWindow } from "electron";
 

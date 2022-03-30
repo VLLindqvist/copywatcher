@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { ThemeProvider } from "@mui/material";
+import { useState } from 'react';
+import { ThemeProvider } from '@mui/material';
 
-import logo from "assets/logo.svg";
-import theme from "./utils/MuiTheme";
+import logo from 'assets/logo.svg';
+import theme from './utils/MuiTheme';
 
-import "./App.scss";
+import './App.scss';
 
-const App = () => {
+function App() {
   const [count, setCount] = useState(0);
 
   return (
@@ -16,7 +16,7 @@ const App = () => {
           <img src={logo} className="App-logo" alt="logo" />
           <p>Hello Vite + React!</p>
           <p>
-            <button type="button" onClick={() => setCount((count) => count + 1)}>
+            <button type="button" onClick={() => setCount(count + 1)}>
               count is: {count}
             </button>
           </p>
@@ -24,6 +24,6 @@ const App = () => {
       </div>
     </ThemeProvider>
   );
-};
+}
 
 export default App;

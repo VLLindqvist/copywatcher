@@ -8,39 +8,42 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "airbnb-base",
-    "plugin:prettier/recommended"
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:react/all",
+    "plugin:jsx-a11y/recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "prettier"
   ],
   "settings": {
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
-    },
+    // "import/parsers": {
+    //   "@typescript-eslint/parser": [".ts", ".tsx"]
+    // },
+    "import/core-modules": ["electron"],
     "import/resolver": {
       "typescript": {}
+    },
+    "react": {
+      "version": "detect"
     }
   },
   "parserOptions": {
+    "parser": "@typescript-eslint/parser",
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "ignorePatterns": ["node_modules/**", "**/dist/**"],
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/consistent-type-imports": "error",
 
-    /**
-     * Having a semicolon helps the optimizer interpret your code correctly.
-     * This avoids rare errors in optimized code.
-     * @see https://twitter.com/alex_kozack/status/1364210394328408066
-     */
+    "import/no-extraneous-dependencies": "off",
     "semi": ["error", "always"],
-    /**
-     * This will make the history of changes in the hit a little cleaner
-     */
     "comma-dangle": ["warn", "always-multiline"],
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "no-console": "off",
     "import/extensions": [
       "error",
@@ -53,6 +56,32 @@
       }
     ],
     "import/prefer-default-export": "off",
-    "no-multi-assign": "off"
-  }
+    "no-multi-assign": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".tsx"]
+      }
+    ],
+    "react/react-in-jsx-scope": "off"
+  },
+  "overrides": [
+    {
+      "files": ["vite.config.ts"],
+      "parserOptions": {
+        "project": ["./tsconfig.node.json"]
+      }
+    },
+    {
+      "files": ["**/__tests__/**/*.ts?(x)"],
+      "extends": ["plugin:testing-library/react"],
+      "rules": {
+        "testing-library/no-await-sync-events": "error",
+        "testing-library/no-manual-cleanup": "error",
+        "testing-library/prefer-explicit-assert": "error",
+        "testing-library/prefer-user-event": "error",
+        "testing-library/prefer-wait-for": "error"
+      }
+    }
+  ]
 }

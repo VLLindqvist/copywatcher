@@ -1,2 +1,8 @@
 node_modules/**
 **/node_modules/**
+**/tests/**
+*.test.ts
+*.test.js
+*.test.jsx
+*.test.tsx
+vite.config.js

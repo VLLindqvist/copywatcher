@@ -30,13 +30,12 @@ const stderrFilterPatterns = [
 /**
  * @param {{name: string; configFile: string; writeBundle: import('rollup').OutputPlugin['writeBundle'] }} param0
  */
-const getWatcher = ({ name, configFile, writeBundle }) => {
-  return build({
+const getWatcher = ({ name, configFile, writeBundle }) =>
+  build({
     ...sharedConfig,
     configFile,
     plugins: [{ name, writeBundle }],
   });
-};
 
 /**
  * Start or restart App when source files are changed

@@ -1,5 +1,11 @@
 // import { createHash } from "crypto";
-// import { afterEach, expect, test, vi } from "vitest";
+import { expect, test } from "vitest";
+
+test("preload", () => {
+  test("1", () => {
+    expect(1).toBeTruthy();
+  });
+});
 
 // const exposeInMainWorldMock = vi.fn();
 // vi.mock("electron", () => ({

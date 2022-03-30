@@ -1,3 +1,11 @@
+import { expect, test } from 'vitest';
+
+test('preload', () => {
+  test('1', () => {
+    expect(1).toBeTruthy();
+  });
+});
+
 // import { render } from "@testing-library/react";
 // import { expect, test } from "vitest";
 // import ReactiveCounter from '../src/components/ReactiveCounter.vue';

@@ -1,4 +1,8 @@
 {
+  "parserOptions": {
+    "project": ["packages/main/tsconfig.json"]
+  },
+  "extends": ["airbnb-typescript"],
   "settings": {
     "import/resolver": {
       "alias": {

@@ -1,9 +1,12 @@
 {
+  "parserOptions": {
+    "project": ["packages/renderer/tsconfig.json"]
+  },
   "env": {
     "browser": true,
     "node": false
   },
-  "extends": ["plugin:react/recommended", "plugin:react/jsx-runtime"],
+  "extends": ["airbnb-typescript"],
   "settings": {
     "import/resolver": {
       "alias": {
@@ -13,14 +16,6 @@
         ],
         "extensions": [".woff2", ".ts"]
       }
-    },
-    "react": {
-      "version": "detect"
     }
-  },
-  "parserOptions": {
-    "parser": "@typescript-eslint/parser",
-    "ecmaVersion": 12,
-    "sourceType": "module"
   }
 }

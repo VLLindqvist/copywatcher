@@ -1,3 +1,11 @@
+import { expect, test } from "vitest";
+
+test("preload", () => {
+  test("1", () => {
+    expect(1).toBeTruthy();
+  });
+});
+
 // import type { ElectronApplication } from "playwright";
 // import { _electron as electron } from "playwright";
 // import { afterAll, beforeAll, expect, test } from "vitest";

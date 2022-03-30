@@ -1,5 +1,7 @@
 import { join } from "path";
 import { builtinModules } from "module";
+import tsconfigPaths from "vite-tsconfig-paths";
+import eslintPlugin from "vite-plugin-eslint";
 
 import { node } from "../../.electron-vendors.cache.json";
 
@@ -18,6 +20,7 @@ const config = {
       "@src/": `${join(PACKAGE_ROOT, "src")}/`,
     },
   },
+  plugins: [tsconfigPaths(), eslintPlugin()],
   build: {
     sourcemap: "inline",
     target: `node${node}`,
