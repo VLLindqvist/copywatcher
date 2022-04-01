@@ -1,4 +1,3 @@
-import { join } from "path";
 import { builtinModules } from "module";
 import tsconfigPaths from "vite-tsconfig-paths";
 import eslintPlugin from "vite-plugin-eslint";
@@ -6,6 +5,8 @@ import eslintPlugin from "vite-plugin-eslint";
 import { node } from "../../.electron-vendors.cache.json";
 
 const PACKAGE_ROOT = __dirname;
+
+console.log({ PACKAGE_ROOT });
 
 /**
  * @type {import('vite').UserConfig}
@@ -15,11 +16,6 @@ const config = {
   mode: process.env.MODE,
   root: PACKAGE_ROOT,
   envDir: process.cwd(),
-  resolve: {
-    alias: {
-      "@src/": `${join(PACKAGE_ROOT, "src")}/`,
-    },
-  },
   plugins: [tsconfigPaths(), eslintPlugin()],
   build: {
     sourcemap: "inline",

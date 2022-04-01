@@ -17,12 +17,6 @@ const PACKAGE_ROOT = __dirname;
 const config = {
   mode: process.env.MODE,
   root: PACKAGE_ROOT,
-  resolve: {
-    alias: {
-      "@src/": `${join(PACKAGE_ROOT, "src")}/`,
-      _: join(PACKAGE_ROOT, "src"),
-    },
-  },
   plugins: [react(), tsconfigPaths(), eslintPlugin()],
   base: "",
   server: {

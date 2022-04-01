@@ -1,21 +1,6 @@
 {
-  "parserOptions": {
-    "project": ["packages/renderer/tsconfig.json"]
-  },
   "env": {
     "browser": true,
     "node": false
-  },
-  "extends": ["airbnb-typescript"],
-  "settings": {
-    "import/resolver": {
-      "alias": {
-        "map": [
-          ["assets", "./packages/renderer/assets"],
-          ["@src", "./packages/renderer/src"]
-        ],
-        "extensions": [".woff2", ".ts"]
-      }
-    }
   }
 }

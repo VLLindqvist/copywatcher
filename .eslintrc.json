@@ -82,6 +82,13 @@
         "testing-library/prefer-user-event": "error",
         "testing-library/prefer-wait-for": "error"
       }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-undef": "off",
+        "import/no-unresolved": "off"
+      }
     }
   ]
 }

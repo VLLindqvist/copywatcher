@@ -49,8 +49,6 @@
     "eslint-plugin-react-hooks": "^4.4.0",
     "eslint-plugin-testing-library": "^5.1.0",
     "happy-dom": "2.51.0",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.3.7",
     "nano-staged": "0.6.0",
     "playwright": "1.20.1",
     "prettier": "^2.6.1",
@@ -70,17 +68,5 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "sass": "^1.49.9"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "**/*.{ts,tsx,js,jsx}": [
-      "prettier --write",
-      "eslint --fix .",
-      "git add"
-    ]
   }
 }

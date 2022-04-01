@@ -1,7 +1,7 @@
 import { resolve, sep } from "path";
 
 export default {
-  "*.{js,ts,jsx,tsx}": "eslint --cache --fix",
+  "*.{js,ts,jsx,tsx}": "eslint --cache --fix --no-ignore",
 
   /**
    * Run typechecking if any type-sensitive files was staged

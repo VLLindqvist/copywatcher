@@ -9,9 +9,12 @@
     "isolatedModules": true,
 
     "types": ["node"],
-
+    "paths": {
+      "src/*": ["./src/*"],
+      "@contracts": ["./contracts.d.ts"]
+    },
     "baseUrl": "."
   },
-  "include": ["src/**/*.ts", "../../types/**/*.d.ts"],
+  "include": ["src/**/*.ts", "contracts.d.ts", "../../types/**/*.d.ts"],
   "exclude": ["**/*.spec.ts", "**/*.test.ts"]
 }

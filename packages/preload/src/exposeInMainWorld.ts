@@ -1,7 +1,5 @@
 import { contextBridge } from "electron";
 
-import type { Exposed } from "./types";
-
 /**
  * Typesafe wrapper for `electron.contextBridge.exposeInMainWorld`.
  * Guarantees that all exposed APIs will comply with contracts.
